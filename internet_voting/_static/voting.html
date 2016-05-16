@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Страница голосования</title>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/normalize.css">
+    <link rel="stylesheet" href="_static/style.css">
+  </head>
+
+  <body>
+
+    <div class="form">
+        <div class="tab-content">
+            <h1>Выберите один вариант</h1>
+      <form id="vote_form">
+          {% for option in options %}
+            <div class="vote_wrap"><input id={{ option.id }} name="option" type="radio" value={{ option.id }}>
+                <label class="vote_wrap" for={{ option.id }}><span><span></span></span>{{ option.name }}</label></div>
+          {% endfor %}
+
+          <button class="button button-block", onclick="send_auth_form()"/>Голосовать</button>
+
+          </form>
+
+            <a href="/signout">Выйти</a>
+
+</div> <!-- /form -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="_static/jquery.serialize-object.js"></script>
+
+        <script src="_static/index.js"></script>
+
+
+
+
+  </body>
+</html>
